@@ -1,0 +1,75 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  body {
+    /* Light page background — clean white */
+    @apply bg-gray-50 text-gray-900 font-sans;
+  }
+  html { scroll-behavior: smooth; }
+}
+
+@layer components {
+
+  /* Primary button — black bg, cyan text */
+  .btn-primary {
+    @apply bg-ink-900 hover:bg-ink-800 text-cyan-400 font-semibold
+           px-6 py-3 rounded-xl transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Secondary/outline button — black border */
+  .btn-secondary {
+    @apply border-2 border-ink-900 text-ink-900 hover:bg-ink-900
+           hover:text-cyan-400 font-semibold px-6 py-3 rounded-xl
+           transition-all duration-200;
+  }
+
+  /* Ghost button — subtle */
+  .btn-ghost {
+    @apply text-gray-600 hover:text-ink-900 hover:bg-gray-100
+           font-medium px-4 py-2 rounded-xl transition-all duration-200;
+  }
+
+  /* White card with subtle border */
+  .card {
+    @apply bg-white border border-gray-200 rounded-2xl p-6
+           hover:border-gray-300 hover:shadow-sm transition-all duration-200;
+  }
+
+  /* Form input */
+  .input-field {
+    @apply w-full bg-white border border-gray-200 text-gray-900
+           rounded-xl px-4 py-3 focus:outline-none focus:border-ink-900
+           focus:ring-2 focus:ring-ink-900/10 transition-all duration-200
+           placeholder-gray-400;
+  }
+
+  /* Cyan pill tag */
+  .tag-cyan {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 bg-ink-900
+           text-cyan-400 rounded-full text-xs font-semibold;
+  }
+
+  /* Light gray badge */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 bg-white
+           border border-gray-200 rounded-full text-xs text-gray-600
+           font-medium;
+  }
+
+  /* Budget tag — black bg cyan text */
+  .budget-tag {
+    @apply px-2.5 py-0.5 bg-ink-900 text-cyan-400 rounded-lg
+           text-xs font-bold;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
